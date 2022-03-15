@@ -1,0 +1,177 @@
+body {
+  background-color: rgb(72, 54, 109);
+  max-width: 1000px;
+  width: 100%;
+}
+#container {
+  max-width: 1000px;
+  width: 110%;
+  display: flex;
+  gap: 250px;
+}
+#divWrap {
+  max-width: 320px;
+  width: 100%;
+}
+
+.cart-img {
+  width: 150px;
+}
+h1 {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  margin-left: 15px;
+}
+
+h3 {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+h4 {
+  font-family: HelveticaNeue-ThinItalic;
+  font-size: 12px;
+}
+
+@font-face {
+  font-family: HelveticaNeue-ThinItalic;
+  src: url(HelveticaNeue-ThinItalic.otf);
+}
+#div1 {
+  max-width: 450px;
+  width: 250%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  background-color: aliceblue;
+}
+
+#display {
+  max-width: 650px;
+  width: 100%;
+  border-spacing: 0 12px;
+  margin-right: 50px;
+}
+
+td {
+  padding: 0 8px;
+}
+
+#div0 {
+  display: flex;
+  margin: 10px;
+}
+
+#div2 {
+  margin-left: 10px;
+}
+
+#div3 {
+  margin-left: 60px;
+  align-items: center;
+}
+
+#button {
+  background-color: rgb(189, 149, 226);
+  width: 100%;
+  max-width: 140px;
+  border: none;
+  padding: 9px;
+  cursor: pointer;
+}
+
+tr{
+  background-color: white;
+  padding: 0 8px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+td{
+  background-color: white;
+}
+
+tr td:first-child{
+  border: 1px solid black;
+  border-right: 0;
+}
+
+tr td:nth-child(2){
+  border: 1px solid black;
+  border-left: 0;
+  border-right: 0;
+  padding-left: 10%;
+  width: 45%;
+  min-width: 240px;
+}
+
+tr td:last-child{
+  border: 1px solid black;
+  border-left: 0;
+  width: 170px;
+}
+
+#cart-wrapper {
+  max-width: 1000px;
+  margin-top: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 4%;
+}
+
+#cart-wrapper {
+  visibility: hidden;
+}
+
+#cart {
+  align-items: center;
+  background-color: aliceblue;
+  width: 280px;
+}
+
+#cart-items {
+  margin: 20px;
+  margin-top: 50px;
+}
+
+span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+}
+
+#viewbutton {
+  background-color: red;
+  padding: 10px;
+  max-width: 1000px;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.go-to {
+  background-color: green;
+  color: white;
+  max-width: 1000px;
+  width: 100%;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  padding: 14px;
+}
+
+#remove {
+  background-color: red;
+  color: white;
+  max-width: 1000px;
+  width: 100%;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
