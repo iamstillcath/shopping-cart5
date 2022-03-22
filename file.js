@@ -146,26 +146,25 @@ for (let i = 0; i < buttons.length; i++) {
     image1.src = items[i].image;
     imageCell.append(image1);
 
-    let cart =document.createElement("p");
-    cart.textContent="cart item:"
+    let cart = document.createElement("p");
+    cart.textContent = "cart item:";
     let names = document.createElement("h1");
     names.textContent = items[i].name;
     let titles = document.createElement("h4");
     titles.textContent = items[i].description;
     let cell1 = newRow.insertCell(1);
-    cell1.append(cart,names, titles);
-    cell1.className="cell"
+    cell1.append(cart, names, titles);
+    cell1.className = "cell";
 
     let amount = document.createElement("h2");
-    amount.textContent = items[i].price;
-    amount.style.marginLeft="50px"
+    amount.textContent = "£" + items[i].price;
+    amount.style.marginLeft = "50px";
 
     let remove = document.createElement("button");
     remove.textContent = "Remove from Cart";
     remove.id = "remove";
     let cell2 = newRow.insertCell(2);
     cell2.append(amount, remove);
-    
 
     let itemsCount = document.getElementById("items");
     table.rows.length = table.rows.length + 1;
@@ -181,18 +180,32 @@ for (let i = 0; i < buttons.length; i++) {
     }
 
     cell2.addEventListener("click", function (e) {
-      rowIndex = rowIndex - 1;
       e.target.parentElement.parentElement.remove();
 
       totals = document.getElementById("total");
-      const decrease = +totals.innerText.slice(1) - +amount.innerText;
+      const decrease = +totals.innerText.slice(1) - +amount.innerText.slice(1);
       totals.innerText = "£" + decrease.toFixed(2);
+
+      rowIndex = rowIndex - 1;
+      let itemsCount = document.getElementById("items");
+      table.rows.length = table.rows.length - 1;
+      itemsCount.innerHTML = table.rows.length;
+      console.log("this is itemsCount==>", itemsCount);
 
       if (rowIndex < 0) {
         e.target.parentElement.parentElement.remove();
         showcart.style.visibility = "hidden";
+        divWrap.style.display = "block";
+        cartTable.style.display = "none";
+        goTo.style.display = "none";
       }
-    });;
+
+      goTo.addEventListener("click", function () {
+        let itemsCount = document.getElementById("items");
+        table.rows.length = table.rows.length -  table.rows.length;
+        itemsCount.textContent = table.rows.length;
+      })
+    });
   });
 }
 const cartTable = document.getElementById("display");
@@ -216,11 +229,18 @@ viewBtn.addEventListener("click", function () {
 });
 
 goTo.addEventListener("click", function () {
-  if (divWrap.style.display === "block") {
-    divWrap.style.display = "none";
-    cartTable.style.display = "block";
-    viewBtn.innerText = "Go back to Shop";
+
+  if ((divWrap.style.display = "block")) {
+    cartTable.style.display = "none";
+    goTo.style.display = "none";
+    showcart.style.visibility = "hidden";
+    totals = document.getElementById("total");
+    totals.innerText = "£" + 0;
+    document.querySelector(".table-body").innerHTML="";
+    let itemsCount = document.getElementById("items");
+    itemsCount.innerText = " ";
+    console.log("this is items", itemsCount)
+   
+    
   }
 });
-
-// }
