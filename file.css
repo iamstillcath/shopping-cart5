@@ -75,20 +75,13 @@ td {
   align-items: center;
 }
 
-#button {
-  background-color: rgb(189, 149, 226);
-  width: 100%;
-  max-width: 140px;
-  border: none;
-  padding: 9px;
-  cursor: pointer;
-}
 
 tr{
   background-color: white;
   padding: 0 8px;
   display: block;
   margin-bottom: 12px;
+ 
 }
 
 td{
@@ -100,6 +93,15 @@ tr td:first-child{
   border-right: 0;
 }
 
+#button {
+  background-color: rgb(189, 149, 226);
+  width: 100%;
+  max-width: 140px;
+  border: none;
+  padding: 9px;
+  cursor: pointer;
+}
+
 tr td:nth-child(2){
   border: 1px solid black;
   border-left: 0;
@@ -107,12 +109,14 @@ tr td:nth-child(2){
   padding-left: 10%;
   width: 45%;
   min-width: 240px;
+  
 }
 
 tr td:last-child{
   border: 1px solid black;
   border-left: 0;
   width: 170px;
+  pointer-events: none;
 }
 
 #cart-wrapper {

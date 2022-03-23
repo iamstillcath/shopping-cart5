@@ -163,6 +163,7 @@ for (let i = 0; i < buttons.length; i++) {
     let remove = document.createElement("button");
     remove.textContent = "Remove from Cart";
     remove.id = "remove";
+    remove.style.pointerEvents="all"
     let cell2 = newRow.insertCell(2);
     cell2.append(amount, remove);
 
@@ -181,7 +182,6 @@ for (let i = 0; i < buttons.length; i++) {
 
     cell2.addEventListener("click", function (e) {
       e.target.parentElement.parentElement.remove();
-
       totals = document.getElementById("total");
       const decrease = +totals.innerText.slice(1) - +amount.innerText.slice(1);
       totals.innerText = "£" + decrease.toFixed(2);
